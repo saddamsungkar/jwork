@@ -1,23 +1,16 @@
 /**
  * @author : Muhammad Saddam
- * @version : Modul2 - 18/03/2021
+ * @version : Modul3 - 18/03/2021
 */
+
 public class DatabaseRecruiter
 {
-    private String[] listRecruiter;
-    
-    /**
-     * Constructor untuk objek pada DatabaseRecruiter 
-     */
-    public DatabaseRecruiter()
-    {
-    }
-
+    private static String[] listRecruiter;
     /**
      * membuat method addrecruiter dari databaserecruiter
      * @return true
      */
-    public boolean addrecruiter(Recruiter recruiter){
+    public static boolean addrecruiter(Recruiter recruiter){
         return true;
     }
     
@@ -25,23 +18,13 @@ public class DatabaseRecruiter
      * membuat method removerecruiter dari databaserecruiter
      * @return false
      */
-    public boolean removerecruiter(Recruiter recruiter){
+    public static boolean removerecruiter(Recruiter recruiter){
         return false;
     }
     
     /**
      * getter recruiter dari databaserecruiter
-     * @return recruiter
+         * @return recruiter
      */
-    public Recruiter getRecruiter(){
+    public static Recruiter getRecruiter(){
         return recruiter;
-    }
-    
-    /**
-     * getter getlisrecruiter dari databaserecruiter
-     * @return listrecruiter
-     */
-    public String[] getListRecruiter(){
-        return listRecruiter;
-    }
-}

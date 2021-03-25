@@ -1,6 +1,6 @@
 /**
  * @author : Muhammad Saddam
- * @version : Modul2 - 18/03/2021
+ * @version : Modul3 - 18/03/2021
 */
 
 public class Jobseeker

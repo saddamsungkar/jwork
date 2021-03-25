@@ -1,7 +1,6 @@
 #BlueJ class context
 comment0.target=JWork
-comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul2\ -\ 18/03/2021\n
+comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul3\ -\ 18/03/2021\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\n\ fungsi\ main\n\ membuat\ objek\ dari\ class\ yang\ ada\n\ memanggil\ method\ method\ yang\ ada\ menggunakan\ objek\ yang\ telah\ dibuat\n
 numComments=2

@@ -1,53 +1,34 @@
 /**
  * @author : Muhammad Saddam
- * @version : Modul2 - 18/03/2021
+ * @version : Modul3 - 18/03/2021
 */
 
 public class DatabaseJob
 {
-    /**
-    Deklarasi Variable 
-    */
-   
-    private String[] listJob;
-
-    /**
-     * constructor dari databsejob
-     */
+    private static String[] listJob;
+    
     public DatabaseJob()
     {
         
     }
     
-    /**
-     * membuat method addjob dari databasejob
-     * @return true
-     */
-    public boolean addJob(Job job){
-        return true;
+    public static boolean addJob(Job job) 
+    {
+        return false; 
     }
     
-    /**
-     * membuat method removejob dari databasejob
-     * @return false
-     */
-    public boolean removeJob(Job job){
+    public static boolean removeJob(Job job)
+    {
         return false;
     }
     
-    /**
-     * getter job dari databasejob
-     * @return job
-     */
-    public Job getJob(){
-        return job;
+    public static Job getJob() 
+    {
+        return null;
     }
     
-    /**
-     * getter getlisjob dari databasejob
-     * @return listjob
-     */
-    public String[] getListJob(){
-        return listJob;
+    public static String [] getListJob () 
+    {
+        return listJob; 
     }
 }

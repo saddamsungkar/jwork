@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Jobseeker
-comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul2\ -\ 18/03/2021\n
+comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul3\ -\ 18/03/2021\n
 comment1.params=id\ name\ email\ password\ joinDate
 comment1.target=Jobseeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\n\ constructor\ dari\ jobseeker\n\ @param\ id\ dari\ jobseeker\n\ @param\ nama\ dari\ jobseeker\n\ @param\ email\ dari\ jobseeker\n\ @param\ password\ dari\ jobseeker\n\ @param\ joindate\ dari\ jobseeker\n
