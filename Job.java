@@ -1,76 +1,80 @@
 /**
- * Write a description of class Job here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+ * @author : Muhammad Saddam
+ * @version : Modul3 - 18/03/2021
+*/
+
 public class Job
 {
+    /**
+    Deklarasi Variable 
+    */
     private int id;
-    private int fee;
     private String name;
+    private int fee;
     private String category;
-    
-    public Recruiter recruiter;
-    
-    public Job(int id, int fee, String name, String category, Recruiter recruiter)
-    {
+    private Recruiter recruiter;
+
+    public Job(int id, String name, Recruiter recruiter, int fee, String category) {
         this.id = id;
-        this.fee = fee;
         this.name = name;
-        this.category = category;
         this.recruiter = recruiter;
+        this.fee = fee;
+        this.category = category;
     }
-    
+
     public int getId()
     {
-        return this.id;
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 
     public int getFee()
     {
-        return this.fee;
-    }
-    
-    public String getName()
-    {
-        return this.name;
+        return fee;
     }
 
     public String getCategory()
     {
-        return this.category;
+        return category;
+    }
+
+    public Recruiter getRecruiter() { 
+        return recruiter; 
+    }
+
+    public void setRecruiter(Recruiter recruiter) { 
+        this.recruiter = recruiter; 
+    }
+
+    public void setId(int id) { 
+        this.id = id; 
     }
     
-    public Recruiter getRecruiter()
-    {
-        return this.recruiter;
+    public void setName(String name) { 
+        this.name = name; 
     }
-    
-    public void setId(int id)
-    {
-        this.id = id;
+
+    public void setFee(int fee) { 
+        this.fee = fee; 
     }
-    
-    public void setName(String name)
-    {
-        this.name = name;
+
+    public void setCategory(String category) { 
+        this.category = category; 
     }
-    
-    public void setCategory(String category)
-    {
-        this.category = category;
+
+    public void printData() {
+        System.out.println("Nama Job : " + name);
+        System.out.println("==========JOB==========");
+        System.out.println("ID:" + id);
+        System.out.println("Name:" + name);
+        System.out.println("Recruiter:" + recruiter.getName());
+        System.out.println("City"+ recruiter.getLocation().getCity());
+        System.out.println("Fee:" + fee);
+        System.out.println("Category:" + category);
     }
-    
-    public void setFee(int Fee)
-    {
-        this.fee = fee;
-    }
-    
-    public void setRecruiter(Recruiter recruiter)
-    {
-        this.recruiter = recruiter;
-    }
-    
-    public void printData(){}
+
 }

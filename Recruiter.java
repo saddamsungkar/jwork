@@ -1,20 +1,17 @@
 /**
- * Write a description of class Recruiter here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+ * @author : Muhammad Saddam
+ * @version : Modul3 - 18/03/2021
+*/
+
 public class Recruiter
 {
     private int id;
     private String name;
     private String email;
     private String phoneNumber;
-    
-    public Location location;
-    
-    public Recruiter(int id, String name, String email, String phoneNumber, Location location)
-    {
+    private Location location;
+
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location) { 
         this.id = id;
         this.name = name;
         this.email = email;
@@ -24,50 +21,51 @@ public class Recruiter
 
     public int getId()
     {
-        return this.id;
+        return id;
     }
-    
+
     public String getName()
     {
-        return this.name;
+        return name;
     }
     
-    public String getEmail()
-    {
-        return this.email;
+    public Location getLocation(){ 
+        return location; 
+    }
+
+    public String getEmail() { 
+        return email; 
+    }
+
+    public String getPhoneNumber() { 
+        return phoneNumber; 
+    }
+
+    public Location getlocation() { 
+        return location; 
     }
     
-    public String getPhoneNumber()
-    {
-        return this.phoneNumber;
+    public void setId(int id) { 
+        this.id = id; 
     }
     
-    public Location getLocation()
-    {
-        return this.location;
+    public void setEmail(String email) { 
+        this.email = email; 
     }
     
-    public void setId(int id)
-    {
-        this.id = id;
+    public void setName(String name) { 
+        this.name = name; 
     }
-    
-    public void setEmail(String email)
-    {
-        this.email = email;
+
+    public void setPhoneNumber(String phoneNumber) { 
+        this.phoneNumber=phoneNumber; 
     }
-    
-    public void setName(String name)
-    {
-        this.name = name;
+
+    public void setLocation(Location location) { 
+        this.location=location; 
     }
-    
-    public void setPhoneNumber(String phonenumber)
-    {
-        this.phoneNumber = phoneNumber;
+
+    public void printData() {
+        System.out.println("Perekrut : "+ name);
     }
-    
-    public void setLocation(Location location){}
-    
-    public void printData(){}
 }
