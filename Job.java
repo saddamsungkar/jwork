@@ -1,80 +1,136 @@
+
 /**
  * @author : Muhammad Saddam
- * @version : Modul3 - 18/03/2021
+ * @version : Modul3 - 25/03/2021
 */
 
-public class Job
+public class Job 
 {
+    private int id; 
+    private String name; 
+    private int fee; 
+    private JobCategory category; 
+    private Recruiter recruiter; 
+ 
     /**
-    Deklarasi Variable 
-    */
-    private int id;
-    private String name;
-    private int fee;
-    private String category;
-    private Recruiter recruiter;
-
-    public Job(int id, String name, Recruiter recruiter, int fee, String category) {
+     * Constructor untuk object job
+     * @param id id pada job
+     * @param name nama pada job
+     * @param fee fee dari job
+     * @param category kategori dari job
+     * @param recruiter recruiter dari job
+     */
+    public Job(int id, String name, int fee, JobCategory category, Recruiter recruiter)
+    {
         this.id = id;
         this.name = name;
-        this.recruiter = recruiter;
         this.fee = fee;
         this.category = category;
+        this.recruiter = recruiter;
     }
 
+    /**
+     * getter id dari job
+     * @return dari id
+     */
     public int getId()
     {
         return id;
     }
-
+    
+    /**
+     * getter name dari job
+     * @return dari name
+     */
     public String getName()
     {
         return name;
     }
-
+    
+    /**
+     * getter fee dari job
+     * @return dari fee
+     */
     public int getFee()
     {
         return fee;
     }
-
-    public String getCategory()
+    
+    /**
+     * getter category dari job
+     * @return dari category
+     */
+    public JobCategory getCategory()
     {
         return category;
     }
-
-    public Recruiter getRecruiter() { 
-        return recruiter; 
-    }
-
-    public void setRecruiter(Recruiter recruiter) { 
-        this.recruiter = recruiter; 
-    }
-
-    public void setId(int id) { 
-        this.id = id; 
+    
+    /**
+     * getter recruiter dari job
+     * @return dari recruiter
+     */
+    public Recruiter getRecruiter()
+    {
+        return recruiter;
     }
     
-    public void setName(String name) { 
-        this.name = name; 
+    /**
+     * setter id dari job
+     * @param id
+     */
+    public void setId(int id)
+    {
+        this.id = id;
     }
-
-    public void setFee(int fee) { 
-        this.fee = fee; 
+    
+    /**
+     * setter name dari job
+     * @param id
+     */
+    public void setName(String name)
+    {
+        this.name = name;
     }
-
-    public void setCategory(String category) { 
-        this.category = category; 
+    
+    /**
+     * setter fee dari job
+     * @param fee
+     */
+    public void setFee(int fee)
+    {
+        this.fee = fee;
     }
-
-    public void printData() {
-        System.out.println("Nama Job : " + name);
-        System.out.println("==========JOB==========");
-        System.out.println("ID:" + id);
-        System.out.println("Name:" + name);
-        System.out.println("Recruiter:" + recruiter.getName());
-        System.out.println("City"+ recruiter.getLocation().getCity());
-        System.out.println("Fee:" + fee);
-        System.out.println("Category:" + category);
+    
+    /**
+     * setter category dari job
+     * @param category
+     */
+    public void setCategory(JobCategory category)
+    {
+        this.category = category;
     }
-
+    
+    /**
+     * setter recruiter dari job
+     * @param recruiter
+     */
+    public void setRecruiter(Recruiter recruiter)
+    {
+        this.recruiter = recruiter;
+    }
+    
+    /**
+     * printData ini fungsi nya untuk nge print data pada job yang dipanggil pada JWork
+     */
+    public void printData()
+    {
+     System.out.println("\n=========Job=========\n"+
+        "ID         =  "+id +"\n"+
+        "Nama       =  "+name +"\n"+
+        "Recruiter  =  "+recruiter.getName()+"\n"+
+        "Kota       = "+recruiter.getLocation().getCity()+"\n"+
+        "Fee total  =  "+fee+"\n"+
+        "kategori   =  "+category
+        );
+    }
 }

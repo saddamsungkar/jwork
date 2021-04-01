@@ -1,25 +1,18 @@
+
 /**
  * @author : Muhammad Saddam
- * @version : Modul3 - 18/03/2021
+ * @version : Modul3 - 25/03/2021
 */
 
-public enum PaymentType {
-    BankPayment {
-        @Override
-        public String toString(){
-            return "Bank Payment";
-        }
-    },
-    EwalletPayment {
-        @Override
-        public String toString(){
-            return "E-wallet Payment";
-        }
-    };
-    public static void main(String[] args){
-        PaymentType p1 = PaymentType.BankPayment;
-        System.out.println(p1);
-        PaymentType p2 = PaymentType.EwalletPayment;
-        System.out.println(p2);
+public enum PaymentType 
+{
+    BankPayment("Bank Payment"), 
+    EwalletPayment("E-Wallet Payment");
+    private String type;
+    PaymentType(String type){
+    this.type = type;
+    }
+      public String toString(){
+        return type;
     }
 }

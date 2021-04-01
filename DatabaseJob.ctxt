@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=DatabaseJob
-comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul3\ -\ 18/03/2021\n
-comment1.params=
-comment1.target=DatabaseJob()
+comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul3\ -\ 25/03/2021\n
+comment1.params=job
+comment1.target=boolean\ addJob(Job)
+comment1.text=\n\ fungsi\ addjob\ dengan\ menggunakan\ boolean\n\ @return\ true\n
 comment2.params=job
-comment2.target=boolean\ addJob(Job)
-comment3.params=job
-comment3.target=boolean\ removeJob(Job)
+comment2.target=boolean\ removeJob(Job)
+comment2.text=\n\ fungsi\ removejob\ dengan\ menggunakan\ boolean\n\ @return\ true\n
+comment3.params=
+comment3.target=Job\ getJob()
+comment3.text=\n\ getter\ job\ dari\ databasejob\ \n\ @return\ null\ \n
 comment4.params=
-comment4.target=Job\ getJob()
+comment4.target=java.lang.String[]\ getListJob()
+comment4.text=\n\ getter\ listjob\ dari\ databasejob\ \n\ @return\ null\ \n
 comment5.params=
-comment5.target=java.lang.String[]\ getListJob()
+comment5.target=void\ printData()
+comment5.text=\n\ printData\ ini\ fungsi\ nya\ untuk\ nge\ print\ data\ pada\ DatabaseJob\ yang\ dipanggil\ pada\ JWork\n
 numComments=6

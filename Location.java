@@ -1,82 +1,91 @@
+
 /**
  * @author : Muhammad Saddam
- * @version : Modul3 - 18/03/2021
+ * @version : Modul3 - 25/03/2021
 */
 
-public class Location
+public class Location 
 {
+    private String province; 
+    private String city; 
+    private String description; 
+    
     /**
-    Deklarasi Variable 
-    */
-    private String province;
-    private String city;
-    private String description;
-
-     /**
-     * constructor dari location
-     * @param province provinsi dari location
-     * @param city kota dari location
-     * @param description dari location
+     * Constructor untuk object location
+     * @param province provinsi pada location
+     * @param city kota pada location
+     * @param description deskripsi pada location
      */
-    public Location(String province, String city, String Description)
+    public Location(String province, String city, String description)
     {
         this.province = province;
         this.city = city;
         this.description = description;
     }
-    
+
     /**
-    * getter provinsi dari location
-    * @return province dari location
-    */
-    public String getProvince(){
+     * getter province dari location
+     * @return dari province
+     */
+    public String getProvince()
+    {
         return province;
     }
     
     /**
-    * getter kota dari location
-    * @return city dari location
-    */
-    public String getCity(){
+     * getter city dari location
+     * @return dari city
+     */
+    public String getCity()
+    {
         return city;
     }
     
     /**
-    * getter deskripsi dari location
-    * @return description dari location
-    */
-    public String getDescription(){
+     * getter description dari location
+     * @return dari description
+     */
+    public String getDescription()
+    {
         return description;
     }
     
     /**
-    * setter provinsi dari location
-    * @param province dari location
-    */
-    public void setProvince(String province) { 
-        this.province = province; 
+     * setter province dari location
+     * @param province
+     */
+     public void setProvince(String province)
+    {
+        this.province = province;
     }
     
     /**
-    * setter kota dari location
-    * @param city dari location
-    */
-    public void setCity(String city) { 
-        this.city = city; 
+     * setter city dari location
+     * @param city
+     */
+    public void setCity(String city)
+    {
+        this.city = city;
     }
     
     /**
-    * setter deskripsi dari location
-    * @param description dari location
-    */
-    public void setDescription(String description) { 
-        this.description=description; 
+     * setter description dari location
+     * @param description
+     */
+    public void setDescription(String description)
+    {
+        this.description = description;
     }
     
     /**
-    * mencetak nama provinsi
-    */
-    public void printData() {
-        System.out.println("Nama Provinsi : "+ province);
+     * printData ini fungsi nya untuk nge print data pada location yang dipanggil pada JWork
+     */
+    public void printData()
+    {
+        System.out.println("===Lokasi===\n"+
+        "Provinsi   =  "+province +"\n"+
+        "Kota       =  "+city +"\n"+
+        "Deskripsi  =  "+description
+        );
     }
 }

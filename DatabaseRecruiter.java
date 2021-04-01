@@ -1,30 +1,46 @@
+
 /**
  * @author : Muhammad Saddam
- * @version : Modul3 - 18/03/2021
+ * @version : Modul3 - 25/03/2021
 */
 
-public class DatabaseRecruiter
+public class DatabaseRecruiter 
 {
-    private static String[] listRecruiter;
+    private static String[] listRecruiter; 
+
     /**
-     * membuat method addrecruiter dari databaserecruiter
+     * fungsi addrecruiter dengan menggunakan boolean
      * @return true
      */
-    public static boolean addrecruiter(Recruiter recruiter){
+       public static boolean addRecruiter(Recruiter recruiter)
+    {
         return true;
     }
     
     /**
-     * membuat method removerecruiter dari databaserecruiter
+     * fungsi removeRecruiter dengan menggunakan boolean
      * @return false
      */
-    public static boolean removerecruiter(Recruiter recruiter){
-        return false;
+    public static boolean removeRecruiter(Recruiter recruiter)
+    {
+        return true;
     }
     
     /**
-     * getter recruiter dari databaserecruiter
-         * @return recruiter
+     * getter recruiter dari databaseRecruiter
+     * @return null 
+     */ 
+    public static Recruiter getRecruiter()
+    {
+        return null;
+    }
+    
+    /**
+     * getter listRecruiter dari databaseRecruiter 
+     * @return listRecruiter 
      */
-    public static Recruiter getRecruiter(){
-        return recruiter;
+    public static String[] getListRecruiter()
+    {
+        return listRecruiter;
+    }
+}

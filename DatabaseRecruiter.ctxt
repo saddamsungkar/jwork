@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=DatabaseRecruiter
+comment0.text=\n\ @author\ \:\ Muhammad\ Saddam\n\ @version\ \:\ Modul3\ -\ 25/03/2021\n
+comment1.params=recruiter
+comment1.target=boolean\ addRecruiter(Recruiter)
+comment1.text=\n\ fungsi\ addrecruiter\ dengan\ menggunakan\ boolean\n\ @return\ true\n
+comment2.params=recruiter
+comment2.target=boolean\ removeRecruiter(Recruiter)
+comment2.text=\n\ fungsi\ removeRecruiter\ dengan\ menggunakan\ boolean\n\ @return\ false\n
+comment3.params=
+comment3.target=Recruiter\ getRecruiter()
+comment3.text=\n\ getter\ recruiter\ dari\ databaseRecruiter\n\ @return\ null\ \n
+comment4.params=
+comment4.target=java.lang.String[]\ getListRecruiter()
+comment4.text=\n\ getter\ listRecruiter\ dari\ databaseRecruiter\ \n\ @return\ listRecruiter\ \n
+numComments=5
