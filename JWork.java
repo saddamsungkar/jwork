@@ -27,10 +27,10 @@ public class JWork{
         Bonus bonus2 = new Bonus(2, "cba", 5000, 10000, true);
         Location loc1 = new Location("Jawa Barat", "Depok", "Pesona Khayangan");
         Recruiter rec1 = new Recruiter(1, "Saddam", "saddamsungkar@gmail.com", "0811602020", loc1);
-        Job bersih = new Job(12, "OB", 12000, JobCategory.BackEnd, rec1);
-        EwalletPayment ewalletpayment = new EwalletPayment(1, bersih,"01 april 2021", iya, InvoiceStatus.OnGoing);
-        EwalletPayment ewalletpayment2 = new EwalletPayment(2, bersih, "01 april 2021", iya, bonus1, InvoiceStatus.Finished);
-        EwalletPayment ewalletpayment3 = new EwalletPayment(3, bersih, "01 april 2021", iya, bonus2, InvoiceStatus.Finished);
+        Job bersih = new Job(12, "CEO", 12000, JobCategory.BackEnd, rec1);
+        EwalletPayment ewalletpayment = new EwalletPayment(1, bersih,"01 April 2021", iya, InvoiceStatus.OnGoing);
+        EwalletPayment ewalletpayment2 = new EwalletPayment(2, bersih, "01 April 2021", iya, bonus1, InvoiceStatus.Finished);
+        EwalletPayment ewalletpayment3 = new EwalletPayment(3, bersih, "01 April 2021", iya, bonus2, InvoiceStatus.Finished);
         
         ewalletpayment.setTotalFee();
         ewalletpayment2.setTotalFee();
