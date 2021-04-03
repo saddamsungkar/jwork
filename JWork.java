@@ -22,12 +22,12 @@ public class JWork{
         // Invoice inv1 = new Invoice(1,1,"20-03-2021",1000,jobsek1,PaymentType.BankPayment,InvoiceStatus.Finished);
         // inv1.printData();
        
-        Jobseeker iya = new Jobseeker(1, "Golf", "GolfeleFleur@gmail.com", "oke", "20-12-2019");
+        /* Jobseeker iya = new Jobseeker(1, "Golf", "GolfeleFleur@gmail.com", "oke", "20-12-2019");
         Bonus bonus1 = new Bonus(1, "abc", 5000, 2000, true);
         Bonus bonus2 = new Bonus(2, "cba", 5000, 10000, true);
         Location loc1 = new Location("Jawa Barat", "Depok", "Pesona Khayangan");
         Recruiter rec1 = new Recruiter(1, "Saddam", "saddamsungkar@gmail.com", "0811602020", loc1);
-        Job bersih = new Job(12, "CEO", 12000, JobCategory.BackEnd, rec1);
+        Job oke = new Job(12, "CEO", 12000, JobCategory.BackEnd, rec1);
         EwalletPayment ewalletpayment = new EwalletPayment(1, bersih,"01 April 2021", iya, InvoiceStatus.OnGoing);
         EwalletPayment ewalletpayment2 = new EwalletPayment(2, bersih, "01 April 2021", iya, bonus1, InvoiceStatus.Finished);
         EwalletPayment ewalletpayment3 = new EwalletPayment(3, bersih, "01 April 2021", iya, bonus2, InvoiceStatus.Finished);
@@ -39,6 +39,20 @@ public class JWork{
         ewalletpayment.printData();
         ewalletpayment2.printData();
         ewalletpayment3.printData();
+        */
+       
+        Jobseeker iya = new Jobseeker(1, "Golf", "GolfeleFleur@gmail.com", "oke", "20-12-2019");
+        Location loc1 = new Location("Jawa Barat", "Depok", "Pesona Khayangan");
+        Recruiter rec1 = new Recruiter(1, "Saddam", "saddamsungkar@gmail.com", "0811602020", loc1);
+        Job oke = new Job(12, "CEO", 12000, JobCategory.BackEnd, rec1);
         
+        BankPayment bankpayment1 = new BankPayment(1, oke, "3 April 2021", iya, InvoiceStatus.Finished);
+        BankPayment bankpayment2 = new BankPayment(2, oke, "3 April 2021", iya, 100000, InvoiceStatus.Finished);
+               
+        bankpayment1.setTotalFee();
+        bankpayment2.setTotalFee();
+        
+        bankpayment1.printData();
+        bankpayment2.printData();
     }
 }
