@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * @author : Muhammad Saddam
  * @version : Modul3 - 25/03/2021
@@ -41,18 +43,32 @@ public class JWork{
         ewalletpayment3.printData();
         */
        
-        Jobseeker iya = new Jobseeker(1, "Golf", "GolfeleFleur@gmail.com", "oke", "20-12-2019");
+        /* Jobseeker iya = new Jobseeker(1, "Golf", "GolfeleFleur@gmail.com", "oke", "20-12-2019");
         Location loc1 = new Location("Jawa Barat", "Depok", "Pesona Khayangan");
         Recruiter rec1 = new Recruiter(1, "Saddam", "saddamsungkar@gmail.com", "0811602020", loc1);
         Job oke = new Job(12, "CEO", 12000, JobCategory.BackEnd, rec1);
         
         BankPayment bankpayment1 = new BankPayment(1, oke, "3 April 2021", iya, InvoiceStatus.Finished);
-        BankPayment bankpayment2 = new BankPayment(2, oke, "3 April 2021", iya, 100000, InvoiceStatus.Finished);
+        BankPayment bankpayment2 = new BankPayment(2, oke, "3 April 2021", iya, 1000, InvoiceStatus.Finished);
                
         bankpayment1.setTotalFee();
         bankpayment2.setTotalFee();
         
         bankpayment1.printData();
-        bankpayment2.printData();
+        bankpayment2.printData(); */
+        
+        GregorianCalendar tanggal = new GregorianCalendar(2021, 8,4);
+        Jobseeker oke = new Jobseeker(1, "saddam", "saddd..manis@ui.ac.id", "123", tanggal);
+        Jobseeker asik = new Jobseeker(2, "saddam", "manis.yak@gmail.com", "saddamganteng", 2021, 8, 4);
+        Jobseeker manis = new Jobseeker(3,"saddam", "mantap.yak@gmail.com", "saddamganteng" );
+        
+        System.out.println(oke.toString());
+        System.out.println(asik.toString());
+        System.out.println(manis.toString());
+        
+        oke.setEmail("saddam.asik@gmail.com");
+        oke.setPassword("saddamganteng");
+        
+        System.out.println(oke.toString());
     }
 }
