@@ -4,15 +4,18 @@
  * @version : Modul3 - 25/03/2021
 */
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 abstract class Invoice /** inisiasi class*/
 {
-    private int id; //ini untuk inisiasi variabel id dari invoice
-    private Job job; //ini untuk inisiasi variabel idJob dari invoice
-    private String date; //ini untuk inisiasi variabel date dari invoice
-    protected int totalFee; //ini untuk inisiasi variabel totalFee dari invoice
-    private Jobseeker jobseeker; //ini untuk inisiasi variabel jobseeker dari invoice
+    private int id; 
+    private Job job; 
+    private String date; 
+    protected int totalFee; 
+    private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
-    
+    private PaymentType paymentType;
 
     /**
      * Constructor untuk object invoice
@@ -110,7 +113,11 @@ abstract class Invoice /** inisiasi class*/
     {
         this.date = date;
     }
-    
+
+    public void setDate(int year, int month, int dayOfMonth)
+    {
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
+    }
     /**
      * setter totalFee dari invoice
      * @param totalFee
@@ -136,13 +143,5 @@ abstract class Invoice /** inisiasi class*/
      */
     public void printData()
     {
-     System.out.println("\n===Invoice===\n"+
-        "ID            =  "+id +"\n"+
-        "ID ob         =  "+job +"\n"+
-        "Tanggal       =  "+date+"\n"+
-        "Fee total     =  "+totalFee+"\n"+
-        "Seeker        =  "+jobseeker.getName()+"\n"+
-        "Status        =  "+getInvoiceStatus()
-        );
-    }
+}
 }
