@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=DatabaseBonus
+comment1.params=
+comment1.target=java.util.ArrayList\ getBonusDatabase()
+comment2.params=
+comment2.target=int\ getLastId()
+comment3.params=id
+comment3.target=Bonus\ getBonusById(int)
+comment4.params=bonus
+comment4.target=boolean\ addBonus(Bonus)
+comment5.params=id
+comment5.target=boolean\ removeBonus(int)
+numComments=6

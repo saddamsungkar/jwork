@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=DatabaseRecruiter
+comment1.params=
+comment1.target=java.util.ArrayList\ getRecruiterDatabase()
+comment2.params=
+comment2.target=int\ getLastId()
+comment3.params=id
+comment3.target=Recruiter\ getRecruiterById(int)
+comment4.params=recruiter
+comment4.target=boolean\ addRecruiter(Recruiter)
+comment5.params=id
+comment5.target=boolean\ removeRecruiter(int)
+numComments=6

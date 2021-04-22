@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=EwalletPayment
+comment1.params=id\ jobs\ jobseeker
+comment1.target=EwalletPayment(int,\ java.util.ArrayList,\ Jobseeker)
+comment2.params=id\ jobs\ jobseeker\ bonus
+comment2.target=EwalletPayment(int,\ java.util.ArrayList,\ Jobseeker,\ Bonus)
+comment3.params=
+comment3.target=PaymentType\ getPaymentType()
+comment4.params=
+comment4.target=Bonus\ getBonus()
+comment5.params=bonus
+comment5.target=void\ setBonus(Bonus)
+comment6.params=
+comment6.target=void\ setTotalFee()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8
