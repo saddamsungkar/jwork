@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=DatabaseInvoice
+comment1.params=
+comment1.target=java.util.ArrayList\ getInvoiceDatabase()
+comment2.params=
+comment2.target=int\ getLastId()
+comment3.params=id
+comment3.target=Invoice\ getInvoiceById(int)
+comment4.params=jobseekerId
+comment4.target=java.util.ArrayList\ getInvoiceByJobseeker(int)
+comment5.params=invoice
+comment5.target=boolean\ addInvoice(Invoice)
+comment6.params=id\ invoiceStatus
+comment6.target=boolean\ changeInvoiceStatus(int,\ InvoiceStatus)
+comment7.params=id
+comment7.target=boolean\ removeInvoice(int)
+numComments=8
