@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RecruiterNotFoundException
+comment1.params=recruiter_input
+comment1.target=RecruiterNotFoundException(int)
+comment2.params=
+comment2.target=java.lang.String\ getMessage()
+numComments=3

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=BonusNotFoundException
+comment1.params=bonus_input
+comment1.target=BonusNotFoundException(int)
+comment2.params=
+comment2.target=java.lang.String\ getMessage()
+numComments=3

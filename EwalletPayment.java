@@ -4,82 +4,66 @@
  * @version : Modul3 - 25/03/2021
 */
 
-public class EwalletPayment extends Invoice
-{
-    
-    private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
-    private Bonus bonus;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
-    /**
-     * Constructor for objects of class EwalletPayment
-     */
-    public EwalletPayment(
-    int id, 
-    Job job, 
-    String date, 
-    Jobseeker jobseeker, 
-    InvoiceStatus invoiceStatus)
-    {
-        super(id, job, date, jobseeker, invoiceStatus);
+public class EwalletPayment extends Invoice {
+
+    private Bonus bonus;
+    private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
+
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
+        super(id, jobs, jobseeker);
     }
-    public EwalletPayment(
-    int id, 
-    Job job, 
-    String date, 
-    Jobseeker jobseeker,
-    Bonus bonus,
-    InvoiceStatus invoiceStatus)
-    {
-        super(id, job, date, jobseeker, invoiceStatus);
-        this.bonus = bonus;
+
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus) {
+        super(id, jobs, jobseeker);
+        this.setBonus(bonus);
     }
-    
-    public PaymentType getPaymentType()
-    {
+
+    @Override
+    public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
-    
-    public Bonus getBonus()
-    {
+
+    public Bonus getBonus() {
         return bonus;
     }
-    
-    public void setBonus(Bonus bonus)
-    {
+
+    public void setBonus(Bonus bonus) {
         this.bonus = bonus;
     }
-    
+
     @Override
-    public void setTotalFee()
-    {
-        if (bonus !=null && bonus.getActive() && super.getJob().getFee() > bonus.getMinTotalFee()){
-            super.totalFee = super.getJob().getFee() + bonus.getExtraFee();
-        } else {
-            super.totalFee = super.getJob().getFee();
+    public void setTotalFee() {
+        ArrayList<Job> jobs = getJobs();
+        for(Job job: jobs){
+            int fee = job.getFee();
+            if (bonus != null && (bonus.getActive() == true) && fee > bonus.getMinTotalFee()) {
+                super.totalFee = fee + bonus.getExtraFee();
+            } else {
+                super.totalFee = fee;
+            }
         }
     }
-    
+
     @Override
-    public void printData()
-    {
-        System.out.println("\n===Invoice===\n");
-        System.out.println("ID        =  "+super.getId());
-        System.out.println("Job       =  "+super.getJob().getName());
-        System.out.println("Date      =  "+super.getDate());
-        System.out.println("Seeker   =  "+super.getJobseeker().getName());
-        setTotalFee();
-        System.out.println("Fee : " + super.totalFee);
-        if (bonus != null && bonus.getActive() && super.totalFee > bonus.getMinTotalFee()){
-            System.out.println("Referral Code = " + bonus.getReferralCode());
+    public String toString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = dateFormat.format(getDate().getTime());
+        String res = "";
+        for (Job job : getJobs()) {
+            if ((bonus != null) && (bonus.getActive() == true) && (job.getFee() > bonus.getMinTotalFee())) {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nReferral Code = " + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
+
         }
-        System.out.println("\n Status =  " + super.getInvoiceStatus().toString());
-        System.out.println("\n Payment Type =  " + PAYMENT_TYPE.toString());
+        return res;
     }
 }
-    
-    
-    
-    
-    
-      
-

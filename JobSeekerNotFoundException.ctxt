@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=JobSeekerNotFoundException
+comment1.params=jobseeker_input
+comment1.target=JobSeekerNotFoundException(int)
+comment2.params=
+comment2.target=java.lang.String\ getMessage()
+numComments=3

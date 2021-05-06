@@ -4,144 +4,80 @@
  * @version : Modul3 - 25/03/2021
 */
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 
-abstract class Invoice /** inisiasi class*/
+public abstract class Invoice
 {
-    private int id; 
-    private Job job; 
-    private String date; 
-    protected int totalFee; 
+    // Deklarasi beberapa instance variables yang akan digunakan.
+    // Access Modifier variable di set private.
+    private int id;
+    private ArrayList<Job> jobs;
+    private Calendar date;
+    protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
-
-    /**
-     * Constructor untuk object invoice
-     * @param id id pada invoice
-     * @param idJob nama pada invoice
-     * @param date date dari invoice
-     * @param totalFee totalFee dari invoice
-     * @param jobseeker jobseeker dari invoice
-     */
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
         this.date = date;
+        this.jobs = jobs;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
-
-    /**
-     * getter id dari invoice
-     * @return dari id
-     */
-    public int getId()
-    {
+    public int getId(){
         return id;
     }
-    
-    /**
-     * getter idJob dari invoice
-     * @return dari idJob
-     */
-    public Job getJob()
-    {
-        return job;
-    }
-    
-    /**
-     * getter date dari invoice
-     * @return dari date
-     */
-    public String getDate()
-    {
+    public ArrayList<Job> getJobs(){return jobs; }
+    public Calendar getDate(){
         return date;
     }
-    
-    /**
-     * getter totalFee dari invoice
-     * @return dari totalFee
-     */
-    public int getTotalFee()
-    {
+    public int getTotalFee(){
         return totalFee;
     }
-    
-    /**
-     * getter jobseeker dari invoice
-     * @return dari jobseeker
-     */
-    public Jobseeker getJobseeker()
-    {
+    public Jobseeker getJobseeker(){
         return jobseeker;
     }
-    
     public abstract PaymentType getPaymentType();
-    
-    public InvoiceStatus getInvoiceStatus()
-    {
+    public InvoiceStatus getInvoiceStatus(){
         return invoiceStatus;
     }
-    
-    /**
-     * setter id dari invoice
-     * @param id
-     */
-    public void setId(int id)
-    {
-        this.id = id;
+    public void setId(int id){
+        this.id = id;  //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
-    /**
-     * setter idjob dari invoice
-     * @param idjob
-     */
-    public void setJobs(Job job)
-    {
-        this.job = job;
+    public void setJobs(ArrayList<Job> jobs){
+        this.jobs = jobs; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.}
     }
-    
-    /**
-     * setter date dari invoice
-     * @param date
-     */
-    public void setDate(String date)
-    {
-        this.date = date;
+    public void setDate(Calendar date){
+        this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-
-    public void setDate(int year, int month, int dayOfMonth)
-    {
+    public void setDate(int year, int month, int dayOfMonth){
         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
-    /**
-     * setter totalFee dari invoice
-     * @param totalFee
-     */
     public abstract void setTotalFee();
-    
-    /**
-     * setter jobseeker dari invoice
-     * @param jobseeker
-     */
-    public void setJobseeker(Jobseeker jobseeker)
-    {
-        this.jobseeker = jobseeker;
+    public void setJobseeker(Jobseeker jobseeker){
+        this.jobseeker = jobseeker; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
-    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
-    {
-        this.invoiceStatus = invoiceStatus;
+    public void setPaymentType (PaymentType paymentType){
+        this.paymentType = paymentType; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
-    /**
-     * printData ini fungsi nya untuk nge print data pada invoice yang dipanggil pada JWork
-     */
-    public void printData()
-    {
-}
+    public void setInvoiceStatus (InvoiceStatus invoiceStatus){
+        this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    }
+    @Override
+    public String toString() {
+    if (this.date == null) {
+            return "Id = " + getId() + "\nJob = " + getJobs() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        } else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getDate().getTime());
+            return "Id = " + getId() + "\nJob = " + getJobs() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        }
+    }
 }

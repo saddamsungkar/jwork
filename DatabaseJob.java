@@ -1,51 +1,78 @@
+import java.util.ArrayList;
 
-/**
- * @author : Muhammad Saddam
- * @version : Modul3 - 25/03/2021
-*/
-
-public class DatabaseJob 
+public class DatabaseJob
 {
-    private static String[] listJob; 
+    private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();
+    private static int lastId = 0;
 
-    /**
-     * fungsi addjob dengan menggunakan boolean
-     * @return true
-     */ 
+    public static ArrayList<Job> getJobDatabase()
+    {
+        return JOB_DATABASE;
+    }
+
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Job getJobById(int id) throws JobNotFoundException {
+        Job x = null;
+        try{for (Job job : JOB_DATABASE) {
+            if (id == job.getId()) {
+                x = job;
+            }
+        }}
+        catch (Exception e){
+            throw new JobNotFoundException(id);}
+        return x;
+    }
+
+    public static ArrayList<Job> getJobByRecruiter(int recruiterId)
+    {
+        ArrayList<Job> temp = new ArrayList<Job>();
+        for (Job job : JOB_DATABASE) {
+            if (recruiterId == job.getRecruiter().getId()) {
+                temp.add(job);
+            } else {
+                return null;
+            }
+        }
+        return temp;
+    }
+
+    public static ArrayList<Job> getJobByCategory(JobCategory category)
+    {
+        ArrayList<Job> x = new ArrayList<Job>();
+        for (Job job : JOB_DATABASE) {
+            if (category == job.getCategory()) {
+                x.add(job);
+            } else {
+                return null;
+            }
+        }
+        return x;
+    }
+
     public static boolean addJob(Job job)
     {
+        JOB_DATABASE.add(job);
+        lastId = job.getId();
         return true;
     }
-    
-    /**
-     * fungsi removejob dengan menggunakan boolean
-     * @return true
-     */ 
-    public static boolean removeJob(Job job)
-    {
-        return true;
+
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        boolean status = false;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                JOB_DATABASE.remove(element);
+                status = true;
+                break;
+            }
+        }
+        if (!status){
+            throw new JobNotFoundException(id);
+        }
+
+        return status;
     }
-    
-    /**
-     * getter job dari databasejob 
-     * @return null 
-     */ 
-    public static Job getJob()
-    {
-        return null;
-    }
-    /**
-     * getter listjob dari databasejob 
-     * @return null 
-     */
-    public static String[] getListJob()
-    {
-        return null;
-    }
-    
-    /**
-     * printData ini fungsi nya untuk nge print data pada DatabaseJob yang dipanggil pada JWork
-     */
-    public void printData()
-    {}
 }

@@ -1,46 +1,53 @@
+import java.util.ArrayList;
 
-/**
- * @author : Muhammad Saddam
- * @version : Modul3 - 25/03/2021
-*/
-
-public class DatabaseRecruiter 
+public class DatabaseRecruiter
 {
-    private static String[] listRecruiter; 
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
+    private static int lastId = 0;
 
-    /**
-     * fungsi addrecruiter dengan menggunakan boolean
-     * @return true
-     */
-       public static boolean addRecruiter(Recruiter recruiter)
+    public static ArrayList<Recruiter> getRecruiterDatabase()
     {
+        return RECRUITER_DATABASE;
+    }
+
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException{
+        Recruiter x = null;
+        try{for (Recruiter recruiter : RECRUITER_DATABASE) {
+            if (id == recruiter.getId()) {
+                x = recruiter;
+            }
+        }}
+        catch (Exception e){
+            throw new RecruiterNotFoundException(id);}
+        return x;
+    }
+
+    public static boolean addRecruiter(Recruiter recruiter)
+    {
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
         return true;
     }
-    
-    /**
-     * fungsi removeRecruiter dengan menggunakan boolean
-     * @return false
-     */
-    public static boolean removeRecruiter(Recruiter recruiter)
+
+    public static boolean removeRecruiter(int id) throws RecruiterNotFoundException
     {
-        return true;
-    }
-    
-    /**
-     * getter recruiter dari databaseRecruiter
-     * @return null 
-     */ 
-    public static Recruiter getRecruiter()
-    {
-        return null;
-    }
-    
-    /**
-     * getter listRecruiter dari databaseRecruiter 
-     * @return listRecruiter 
-     */
-    public static String[] getListRecruiter()
-    {
-        return listRecruiter;
+        boolean status = false;
+        for (Recruiter element : RECRUITER_DATABASE) {
+            if (element.getId() == id) {
+                RECRUITER_DATABASE.remove(element);
+                status = true;
+                break;
+            }
+        }
+        if (!status){
+            throw new RecruiterNotFoundException(id);
+        }
+
+        return status;
     }
 }
